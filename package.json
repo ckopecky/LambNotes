@@ -6,6 +6,10 @@
     "url": "https://github.com/ckopecky/LambNotes"
   },
   "homepage" : "https://lambnotes-front.herokuapp.com",
+  "engines": {
+    "node": "10.5.0",
+    "yarn": "1.7.0"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.4.1",

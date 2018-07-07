@@ -51,7 +51,6 @@ class SingleNoteView extends Component {
                             </ModalBody>
                     </Modal>
                     </div>
-                    <div className="nav">Log Out</div>
                 </div> {/*end single note nav bar */}
                 <IndivNote 
                     note_title={this.state.note.note_title}
