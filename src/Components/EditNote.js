@@ -23,7 +23,7 @@ class EditNote extends Component {
     }
 
     handleClick = () => { //works
-        axios.put(`https://notepensesame.herokuapp.com/api/notes/${this.state.id}`, this.state, requestOptions)
+        axios.put(`https://lambnotes.herokuapp.com/api/notes/${this.state.id}`, this.state, requestOptions)
             .then(response => {
                 this.props.history.push("/notes");
             })

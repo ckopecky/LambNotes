@@ -23,7 +23,7 @@ class CreateNote extends Component {
     }
 
     handleClick = () => { //works
-        axios.post("https://notepensesame.herokuapp.com/api/notes", this.state, requestOptions)
+        axios.post("https://lambnotes.herokuapp.com/api/notes", this.state, requestOptions)
             .then(response => {
                 this.props.history.push("/notes");
             })

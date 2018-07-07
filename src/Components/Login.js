@@ -17,10 +17,10 @@ class Login extends Component {
     }
 
     handleClick = () => { //works
-        axios.post("https://notepensesame.herokuapp.com//api/user/login", this.state)
+        axios.post("https://lambnotes.herokuapp.com/auth/login", this.state)
             .then(response => {
                 localStorage.setItem("jwt", response.data.token);
-                // this.props.history.push("/notes");
+                this.props.history.push("/notes");
                 
             })
             .catch(err => {
@@ -45,7 +45,7 @@ class Login extends Component {
                     <label className="label">Password:</label>
                     <input onChange={this.handleChange} name="password" type="password" value={this.state.password}/>
                     </div>
-                    <Link to="/notes"><div className="button login-button" onClick={this.handleClick}>Log In</div></Link>
+                    ><div className="button login-button" onClick={this.handleClick}>Log In</div>
                     <Link to="/register"><div className="register-here">New? Register Here!!!</div></Link>
                 </div>
             </div>
