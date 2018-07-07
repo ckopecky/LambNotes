@@ -2,13 +2,6 @@ import React, { Component } from 'react';
 import Sidebar from './Sidebar';
 import axios from 'axios';
 
-const token = localStorage.getItem("jwt")
-const requestOptions = {
-    headers: {
-        Authorization: token
-    }
-}
-
 class EditNote extends Component {
     constructor(props) {
         super(props);
@@ -23,7 +16,7 @@ class EditNote extends Component {
     }
 
     handleClick = () => { //works
-        axios.put(`https://lambnotes.herokuapp.com/api/notes/${this.state.id}`, this.state, requestOptions)
+        axios.put(`http://localhost:25851/api/notes/${this.state.id}`, this.state)
             .then(response => {
                 this.props.history.push("/notes");
             })

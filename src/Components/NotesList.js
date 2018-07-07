@@ -4,12 +4,7 @@ import Sidebar from './Sidebar';
 import axios from 'axios';
 import IndivNote from './IndivNote';
 
-const token = localStorage.getItem("jwt")
-// const requestOptions = {
-//     headers: {
-//         Authorization: token
-//     }
-// }
+
 class NotesList extends Component {
     constructor(props){
         super(props);
@@ -18,9 +13,8 @@ class NotesList extends Component {
         }
     }
     
-    //need to set token on localStorage in order for this to work - this is done on log-in
     componentDidMount(){
-        let promise = axios.get("https://lambnotes.herokuapp.com/api/notes" );//requestOptions);
+        let promise = axios.get("http://localhost:25851/api/notes" );
         promise
             .then(response => {
                 this.setState(response.data)
@@ -38,9 +32,6 @@ class NotesList extends Component {
                 <div className="noteslist-page-wrapper minus-sidebar">
                     <h3 className="page-header">Your Notes</h3>
                     <ul className="noteslist-wrapper">
-                    
-                    {/* {!localStorage.getItem("jwt") &&
-                        <div className="please-signin"><Link className="link-style" to="/login"><h3>Please Sign in to access your notes</h3></Link></div>} */}
                         {this.state.notes.map(item => {
                             console.log(item._id);
                             return(
