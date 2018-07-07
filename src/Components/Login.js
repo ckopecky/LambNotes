@@ -20,7 +20,7 @@ class Login extends Component {
         axios.post("https://lambnotes.herokuapp.com/auth/login", this.state)
             .then(response => {
                 localStorage.setItem("jwt", response.data.token);
-                this.props.history.push("/notes");
+                this.props.history.push("/");
                 
             })
             .catch(err => {
@@ -45,7 +45,7 @@ class Login extends Component {
                     <label className="label">Password:</label>
                     <input onChange={this.handleChange} name="password" type="password" value={this.state.password}/>
                     </div>
-                    ><div className="button login-button" onClick={this.handleClick}>Log In</div>
+                    <button className="button login-button" onClick={this.handleClick}>Log In</button>
                     <Link to="/register"><div className="register-here">New? Register Here!!!</div></Link>
                 </div>
             </div>
