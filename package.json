@@ -5,6 +5,7 @@
   "repository": {
     "url": "https://github.com/ckopecky/LambNotes"
   },
+  "homepage" : "https://lambnotes-front.herokuapp.com",
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.4.1",
